@@ -16,3 +16,11 @@ class InvalidOrderError(DomainError):
 class UnauthorizedActionError(DomainError):
     """Raised when a user attempts an action restricted from their specific system role."""
     pass
+
+class PaymentError(DomainError):
+    """Base exception for all payment-related processing failures."""
+    pass
+
+class CardDeclinedError(PaymentError):
+    """Raised when a mock transaction is explicitly refused by the processing engine."""
+    pass
