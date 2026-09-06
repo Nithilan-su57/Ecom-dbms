@@ -35,3 +35,11 @@ class Order:
     total_amount: float = 0.0
     status: str = "pending"  # 'pending', 'processing', 'completed', 'cancelled'
     created_at: datetime = field(default_factory=datetime.now)  
+
+@dataclass
+class PaymentGatewayPayload:
+    card_holder_name: str
+    card_number: str
+    expiry_date: str
+    cvv: str
+    amount: float
